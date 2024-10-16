@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private GameObject player;
     private Rigidbody2D pRigidbody;
