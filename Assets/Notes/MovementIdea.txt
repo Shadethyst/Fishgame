@@ -1,0 +1,2 @@
+The fish always moves "forward" and when the player presses a movement key, the fish starts turning towards that facing, so w would start turning the fish up, d toward the right etc
+when the dash button is pressed the fish rapidly turns towards the currently held direction and gains a burst of speed
