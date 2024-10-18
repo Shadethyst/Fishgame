@@ -5,9 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
-    private GameObject player;
     private Rigidbody2D pRigidbody;
-    private Transform _pTransform;
     private PlayerInputs _playerInput;
 
 
@@ -35,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private float minSpeed;
     private float playerMod;
     private float actSpeed;
-
+    private float minSpeedP;
 
     private bool inControl;
 
@@ -44,7 +42,9 @@ public class PlayerController : MonoBehaviour
     {
         _playerInput = new PlayerInputs();
         pRigidbody = GetComponent<Rigidbody2D>();
-        _pTransform = GetComponent<Transform>();
+        //_pTransform = GetComponent<Transform>();
+
+        // fetches inputs from the project wide inputsystem asset
         moveR = InputSystem.actions.FindAction("TurnR");
         moveU = InputSystem.actions.FindAction("MoveUp");
         moveD = InputSystem.actions.FindAction("MoveDown");
@@ -57,33 +57,47 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        acceleration = 2f;
+        speed = 1f;
+        deceleration = 1f;
+        minSpeed = 1.2f;
+        maxSpeed = 10f;
+        playerMod = 2f;
+        actSpeed = 0;
+        turnRot = new Vector3(0, 0, 0);
+        minSpeedP = -4f;
+        rotSpeed = 45f;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        tankMove();
+
 
         if (transform.eulerAngles.z > 90f || transform.eulerAngles.z < -90f)
         {
-            transform.eulerAngles = new Vector3(0, 180f, transform.rotation.eulerAngles.z);
+
         }
         turnChar();
     }
     // FixedUpdate is called 50 times a second on a fixed interval
     private void FixedUpdate()
     {
+        tankMove();
         moveChar();
     }
+
+    /* 
+     Moves character forward on Z axis based on actSpeed
+     */
     private void moveChar()
     {
         pRigidbody.MovePosition((Vector2)transform.position + (Vector2)transform.right * actSpeed * Time.fixedDeltaTime);
     }
     private void turnChar()
     {
-        transform.Rotate(turnRot * Time.deltaTime);
+        transform.Rotate(turnRot * Time.deltaTime, Space.World);
         //_pTransform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.fixedDeltaTime * rotSpeed);
     }
 
@@ -96,20 +110,24 @@ public class PlayerController : MonoBehaviour
     private void tankMove() {
         if (moveR.IsPressed() && !moveL.IsPressed())
         {
-            turnRot.Set(0, 0, -30f);
+            turnRot.Set(0, 0, -rotSpeed);
             //_lookRotation = Quaternion.LookRotation(turnRot);
 
         }
         else if (moveL.IsPressed() && !moveR.IsPressed())
         {
-            turnRot.Set(0, 0, 30f);
+            turnRot.Set(0, 0, rotSpeed);
            // _lookRotation = Quaternion.LookRotation(turnRot);
+        }
+        else
+        {
+            turnRot.Set(0, 0, 0);
         }
         if (moveU.IsPressed())
         {
             if (speed < maxSpeed)
             {
-                speed = speed * acceleration;
+                speed = speed + (acceleration * Time.fixedDeltaTime);
             }
             else if (speed >= maxSpeed)
             {
@@ -118,27 +136,31 @@ public class PlayerController : MonoBehaviour
         }
         else if (!moveU.IsPressed() && moveD.IsPressed())
         {
-            if (speed < minSpeed)
+            if (speed < minSpeedP)
             {
-                speed = 1f;
+                speed = -4f;
             }
             else
             {
-                speed = speed * deceleration * playerMod;
+                speed = speed - (deceleration * playerMod * Time.fixedDeltaTime);
             }
         }
         else
         {
-            if (speed < minSpeed)
+            if (speed < minSpeed && speed > -0.3f)
             {
-                speed = 1f;
+                speed = 0f;
+            }
+            else if(speed < minSpeed)
+            {
+                speed += deceleration * Time.fixedDeltaTime;
             }
             else
             {
-                speed = speed * deceleration;
+                speed = speed - (deceleration*Time.fixedDeltaTime);
             }
         }
-        actSpeed = speed - 1f;
+        actSpeed = speed;
     }
     private void contextMove()
     {
