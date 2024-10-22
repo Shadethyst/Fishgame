@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d5d65e3f3f824484b8ce16bc691502dc
+guid: ebf6349a1186e0b459c7a50b4891dddc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7482667652216324306
-    second: Square
+      213: 3625043607559282579
+    second: Isometric Diamond
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -126,32 +126,52 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Square
+      name: Isometric Diamond
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 256
-        height: 256
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -4, y: 64}
+        - {x: -128, y: 2}
+        - {x: -128, y: -2}
+        - {x: -4, y: -64}
+        - {x: 4, y: -64}
+        - {x: 128, y: -2}
+        - {x: 128, y: 2}
+        - {x: 4, y: 64}
+      physicsShape:
+      - - {x: 0, y: 64}
+        - {x: -128, y: 0}
+        - {x: 0, y: -64}
+        - {x: 128, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 2d009a6b596c7d760800000000000000
-      internalID: 7482667652216324306
+      spriteID: 39f1fdb64fdbe4230800000000000000
+      internalID: 3625043607559282579
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline: []
+    outline:
+    - - {x: -4, y: 64}
+      - {x: -128, y: 2}
+      - {x: -128, y: -2}
+      - {x: -4, y: -64}
+      - {x: 4, y: -64}
+      - {x: 128, y: -2}
+      - {x: 128, y: 2}
+      - {x: 4, y: 64}
     physicsShape:
-    - - {x: -128, y: 128}
-      - {x: -128, y: -128}
-      - {x: 128, y: -128}
-      - {x: 128, y: 128}
+    - - {x: 0, y: 64}
+      - {x: -128, y: 0}
+      - {x: 0, y: -64}
+      - {x: 128, y: 0}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
@@ -161,7 +181,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Square: 7482667652216324306
+      Isometric Diamond: 3625043607559282579
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
