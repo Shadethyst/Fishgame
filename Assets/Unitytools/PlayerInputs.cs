@@ -71,6 +71,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DashButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""327c4692-0cf3-46c1-82b8-80ea3fb4fb6a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,6 +280,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""TurnL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7aeb0c2-d121-4cf4-9059-00bf84ff9491"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DashButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -284,6 +304,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Player_Map_MoveDown = m_Player_Map.FindAction("MoveDown", throwIfNotFound: true);
         m_Player_Map_TurnR = m_Player_Map.FindAction("TurnR", throwIfNotFound: true);
         m_Player_Map_TurnL = m_Player_Map.FindAction("TurnL", throwIfNotFound: true);
+        m_Player_Map_DashButton = m_Player_Map.FindAction("DashButton", throwIfNotFound: true);
     }
 
     ~@PlayerInputs()
@@ -355,6 +376,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Map_MoveDown;
     private readonly InputAction m_Player_Map_TurnR;
     private readonly InputAction m_Player_Map_TurnL;
+    private readonly InputAction m_Player_Map_DashButton;
     public struct Player_MapActions
     {
         private @PlayerInputs m_Wrapper;
@@ -364,6 +386,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @MoveDown => m_Wrapper.m_Player_Map_MoveDown;
         public InputAction @TurnR => m_Wrapper.m_Player_Map_TurnR;
         public InputAction @TurnL => m_Wrapper.m_Player_Map_TurnL;
+        public InputAction @DashButton => m_Wrapper.m_Player_Map_DashButton;
         public InputActionMap Get() { return m_Wrapper.m_Player_Map; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +411,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @TurnL.started += instance.OnTurnL;
             @TurnL.performed += instance.OnTurnL;
             @TurnL.canceled += instance.OnTurnL;
+            @DashButton.started += instance.OnDashButton;
+            @DashButton.performed += instance.OnDashButton;
+            @DashButton.canceled += instance.OnDashButton;
         }
 
         private void UnregisterCallbacks(IPlayer_MapActions instance)
@@ -407,6 +433,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @TurnL.started -= instance.OnTurnL;
             @TurnL.performed -= instance.OnTurnL;
             @TurnL.canceled -= instance.OnTurnL;
+            @DashButton.started -= instance.OnDashButton;
+            @DashButton.performed -= instance.OnDashButton;
+            @DashButton.canceled -= instance.OnDashButton;
         }
 
         public void RemoveCallbacks(IPlayer_MapActions instance)
@@ -431,5 +460,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnMoveDown(InputAction.CallbackContext context);
         void OnTurnR(InputAction.CallbackContext context);
         void OnTurnL(InputAction.CallbackContext context);
+        void OnDashButton(InputAction.CallbackContext context);
     }
 }
