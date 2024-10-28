@@ -1,52 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
+    [Range(1f, 100f)]
+    public float acceleration = 40f;
+    [Range(1f, 100f)]
+    public float deceleration = 20f;
+    [Range(0f, 100f)]
+    public float maxSpeed = 20f;
+    [Range(-100f, 0f)]
+    public float minSpeed = -10f;
+    [Range(0f, 1000f)]
+    public float rotSpeed = 200f;
+    [Range(0f, 200f)]
+    public float dashSpeed = 60f;
+    [Range(0f, 10f)]
+    public float dashTime = 1f;
+    [Range(0f, 100f)]
+    public float dashCooldown = 5f;
+
     private Rigidbody2D pRigidbody;
     private PlayerInputs _playerInput;
     private SpriteRenderer _spriteRenderer;
 
-    private float curDir;
-    private Transform turnDir;
     InputAction moveR;
     InputAction moveU;
     InputAction moveL;
     InputAction moveD;
     InputAction DashButton;
 
-    private Vector3 rotateR;
-    private float buttonAmount;
+    // Movement state
+    public float speed;
+    public float targetSpeed;
+    public float dashTimer;
+    public float dashCooldownTimer;
 
-
-    //rotation stats
-    private float rotSpeed;
-    private Vector3 turnRot;
-    private Quaternion _lookRotation;
-
-    //Movement stats
-    private float acceleration;
-    private float maxSpeed;
-    private float speed;
-    private float deceleration;
-    private float minSpeed;
-    private float playerMod;
-    private float actSpeed;
-    private float minSpeedP;
-
-    //dash stats
-    private float dashSpeed;
-    private bool dashing;
-    private float dashTime;
-    private float dashCooldown;
-
-    private bool inControl;
-
-
-    private void OnEnable(){
+    private void OnEnable()
+    {
 
     }
     private void OnDisable()
@@ -58,7 +49,6 @@ public class PlayerController : MonoBehaviour
         _playerInput = new PlayerInputs();
         pRigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        //_pTransform = GetComponent<Transform>();
 
         // fetches inputs from the project wide inputsystem asset
         moveR = InputSystem.actions.FindAction("TurnR");
@@ -74,194 +64,99 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        acceleration = 2f;
-        speed = 1f;
-        deceleration = 1f;
-        minSpeed = 1.2f;
-        maxSpeed = 10f;
-        playerMod = 2f;
-        actSpeed = 0;
-        turnRot = new Vector3(0, 0, 0);
-        minSpeedP = -4f;
-        rotSpeed = 45f;
-        dashSpeed = 30f;
-        dashTime = 10f;
-        dashCooldown = 0f;
-        inControl = true;
-
+        speed = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-
-        if (transform.eulerAngles.z > 90f || transform.eulerAngles.z < -90f)
-        {
-            _spriteRenderer.flipY = true;
-        }
-        else
-        {
-            _spriteRenderer.flipY = false;
-        }
-        turnChar();
     }
 
     // FixedUpdate is called 50 times a second on a fixed interval
     private void FixedUpdate()
     {
-        if (DashButton.IsPressed() && dashCooldown <= 0)
-        {
-            dashing = true;
-            inControl = false;
-        }
-        tankTurn();
-        if (inControl)
-        {
-            tankMove();
-            moveChar();
-        }
-        if (dashing)
-        {
-            CharDash();
-        }
-        if(dashCooldown > 0) {
-            dashCooldown -= Time.fixedDeltaTime;
-        }
+        _spriteRenderer.flipY = Mathf.Abs(transform.eulerAngles.z) > 90f;
 
-
+        Move(Time.fixedDeltaTime);
+        Turn(Time.fixedDeltaTime);
     }
 
-    /* 
-     Moves character forward on Z axis based on actSpeed
-     */
-    private void moveChar()
+    private void Move(float deltaT)
     {
-        pRigidbody.MovePosition((Vector2)transform.position + (Vector2)transform.right * actSpeed * Time.fixedDeltaTime);
-    }
-    private void turnChar()
-    {
-        transform.Rotate(turnRot * Time.deltaTime, Space.World);
-        //_pTransform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.fixedDeltaTime * rotSpeed);
-    }
-    private void CharDash()
-    {
-        while(dashTime >= 0)
+        float acc = 0;
+        if (DashButton.IsPressed() && dashCooldownTimer <= 0) // Start dash
         {
-            pRigidbody.MovePosition((Vector2)transform.position + (Vector2)transform.right * dashSpeed * Time.fixedDeltaTime);
-            dashTime -= Time.fixedDeltaTime;
+            targetSpeed = dashSpeed;
+            dashTimer = dashTime;
+            dashCooldownTimer = dashCooldown;
         }
-        inControl = true;
-        dashing = false;
-        dashTime = 30f;
-        dashCooldown = 3f;
+        else if (IsDashing())
+        {
+            dashTimer -= deltaT;
+            acc = 3 * acceleration;
+            if (dashTimer < 0)
+            {
+                // Stop dash
+                targetSpeed = 0;
+                dashTimer = 0;
+            }
+        }
+        else if (moveU.IsPressed()) // Normal forward
+        {
+            targetSpeed = maxSpeed;
+            acc = acceleration;
+        }
+        else if (!moveU.IsPressed() && moveD.IsPressed()) // Normal backward
+        {
+            targetSpeed = minSpeed;
+            acc = acceleration;
+        }
+        else // No dash or buttons, decelerate to zero
+        {
+            targetSpeed = 0;
+            acc = deceleration;
+        }
 
-    }
-    /*
-     * split off turning so that can still turn while dashing/knocked back
-        a/left = turn left
-        d/right = turn right
-      */
-    private void tankTurn()
-    {
-        if (moveR.IsPressed() && !moveL.IsPressed())
+        // Dash cooldown in progress
+        if (dashCooldownTimer > 0)
         {
-            turnRot.Set(0, 0, -rotSpeed);
-            //_lookRotation = Quaternion.LookRotation(turnRot);
+            dashCooldownTimer = Mathf.Max(0, dashCooldownTimer - deltaT);
+        }
 
-        }
-        else if (moveL.IsPressed() && !moveR.IsPressed())
+        float deltaV = targetSpeed - speed;
+        if (deltaV > 0)
         {
-            turnRot.Set(0, 0, rotSpeed);
-            // _lookRotation = Quaternion.LookRotation(turnRot);
+            speed = Mathf.Min(speed + acc * deltaT, targetSpeed);
         }
-        else
+        else if (deltaV < 0)
         {
-            turnRot.Set(0, 0, 0);
+            speed = Mathf.Max(speed - acc * deltaT, targetSpeed);
         }
+
+        pRigidbody.MovePosition((Vector2)transform.position + speed * deltaT * (Vector2)transform.right);
     }
+
+    private void Turn(float deltaT)
+    {
+        float heading = 0;
+        if (moveR.IsPressed())
+        {
+            heading -= rotSpeed * deltaT;
+        }
+        else if (moveL.IsPressed())
+        {
+            heading += rotSpeed * deltaT;
+        }
+        transform.Rotate(heading * Vector3.forward, Space.World);
+    }
+
+    private bool IsDashing() { return dashTimer > 0; }
+
+
     public void takeDamage()
     {
 
-    }
-
-    /*Movement done with wasd/arrow keys where: 
-        w/up = increase movement speed
-        s/down = reduce movement speed
-    probably bad code, but functions
-     */
-    private void tankMove() {
-        if (moveU.IsPressed())
-        {
-            if (speed < maxSpeed)
-            {
-                speed = speed + (acceleration * Time.fixedDeltaTime);
-            }
-            else if (speed >= maxSpeed)
-            {
-                speed = maxSpeed;
-            }
-        }
-        else if (!moveU.IsPressed() && moveD.IsPressed())
-        {
-            if (speed < minSpeedP)
-            {
-                speed = -4f;
-            }
-            else
-            {
-                speed = speed - (deceleration * playerMod * Time.fixedDeltaTime);
-            }
-        }
-        else
-        {
-            if (speed < minSpeed && speed > -0.3f)
-            {
-                speed = 0f;
-            }
-            else if(speed < minSpeed)
-            {
-                speed += deceleration * Time.fixedDeltaTime;
-            }
-            else
-            {
-                speed = speed - (deceleration*Time.fixedDeltaTime);
-            }
-        }
-        actSpeed = speed;
-    }
-    private void contextMove()
-    {
-        if (moveR.IsPressed() && !moveL.IsPressed())
-        {
-            buttonAmount++;
-            turnRot.Set(0, 0, 0);
-
-        }
-        else if (moveL.IsPressed() && !moveR.IsPressed())
-        {
-            buttonAmount++;
-            turnRot.Set(0, 0, 180f);
-        }
-        if (moveU.IsPressed() && !moveD.IsPressed())
-        {
-            buttonAmount++;
-            turnRot.Set(0, 0, ((turnRot.z) + 90f) / buttonAmount);
-        }
-        else if (!moveU.IsPressed() && moveD.IsPressed())
-        {
-            buttonAmount++;
-            turnRot.Set(0, 0, ((turnRot.z) - 90f) / buttonAmount);
-        }
-        buttonAmount = 0;
-        if (speed > 0 && (!moveD.IsPressed() && !moveL.IsPressed() && !moveR.IsPressed() && !moveU.IsPressed()))
-        {
-            speed = speed - deceleration;
-        }
-        else if (speed < maxSpeed)
-        {
-            speed = speed * acceleration;
-        }
     }
 }
 
