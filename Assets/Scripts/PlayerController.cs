@@ -8,9 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D pRigidbody;
     private PlayerInputs _playerInput;
-    delegate void OnDamageTaken();
-    OnDamageTaken onDamageTaken;
-    
+    private SpriteRenderer _spriteRenderer;
 
     private float curDir;
     private Transform turnDir;
@@ -49,18 +47,17 @@ public class PlayerController : MonoBehaviour
 
 
     private void OnEnable(){
-        
 
     }
     private void OnDisable()
     {
-        
     }
 
     private void Awake()
     {
         _playerInput = new PlayerInputs();
         pRigidbody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         //_pTransform = GetComponent<Transform>();
 
         // fetches inputs from the project wide inputsystem asset
@@ -101,10 +98,15 @@ public class PlayerController : MonoBehaviour
 
         if (transform.eulerAngles.z > 90f || transform.eulerAngles.z < -90f)
         {
-
+            _spriteRenderer.flipY = true;
+        }
+        else
+        {
+            _spriteRenderer.flipY = false;
         }
         turnChar();
     }
+
     // FixedUpdate is called 50 times a second on a fixed interval
     private void FixedUpdate()
     {
@@ -177,6 +179,10 @@ public class PlayerController : MonoBehaviour
         {
             turnRot.Set(0, 0, 0);
         }
+    }
+    public void takeDamage()
+    {
+
     }
 
     /*Movement done with wasd/arrow keys where: 
