@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// SOUND STATE MANAGER: 
 public class SoundStateManager : MonoBehaviour
 {
 
-    public State CurrentSoundState;
+    public SoundState CurrentSoundState;
 
-    public void SetCurrentSoundState(State soundState)
+    public void SetCurrentSoundState(SoundState soundState)
     {
         CurrentSoundState = soundState;
     }
 
-    public State GetCurrentSoundState()
+    public SoundState GetCurrentSoundState()
     {
         return CurrentSoundState;
     }

@@ -2,44 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// SOUND DETECTOR: USED BY THE PLAYER OBJECT TO DETECT LAYERS AND CHANGE SOUND STATES ACCORDINGLY
 public class SoundDetector : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyLayer;
-    public State soundstate;
-    public SoundStateManager soundstatemanager;
+    [SerializeField] private LayerMask sharkLayer;
+
+    public SoundState soundstate;
+    public SoundStateManager soundstateManager;
+
     [SerializeField] private float detectionRange;
 
     // Start is called before the first frame update
     void Start()
     {
-        soundstate = soundstatemanager.GetCurrentSoundState();
+        soundstate = soundstateManager.GetCurrentSoundState();
     }
 
     // Update is called once per frame
     void Update()
     {
-        soundstatemanager.SetCurrentSoundState(soundstate);
+        soundstateManager.SetCurrentSoundState(soundstate);
     }
     
     void FixedUpdate()
     {
-        if (CheckForEnemies())
+        if (CheckSurroundings(sharkLayer))
         {
-            soundstate = State.Enemy;
+            soundstate = SoundState.Shark;
+        }
+        else if (CheckSurroundings(enemyLayer))
+        {
+            soundstate = SoundState.Enemy;
+        }
+        else
+        {
+            soundstate = SoundState.Idle;
         }
 
-        if (!CheckForEnemies())
-        {
-            soundstate = State.Idle;
-        }
+        Debug.Log(soundstate.ToString());
     }
 
-    bool CheckForEnemies()
+    bool CheckSurroundings(LayerMask layerName)
     {
-        return Physics.CheckSphere(transform.position, detectionRange, enemyLayer);
+        return Physics.CheckSphere(transform.position, detectionRange, layerName);
     }
 
-    public State GetSoundState()
+    public SoundState GetSoundState()
     {
         return soundstate;
     }
