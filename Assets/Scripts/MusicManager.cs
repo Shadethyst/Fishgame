@@ -74,12 +74,9 @@ public class MusicManager : MonoBehaviour
             }
         }
 
-        if (checkCounter == musictracks.Length)
+        if (checkCounter == musictracks.Length && upcomingMusic.volume < maxVolume)
         {
-            if (upcomingMusic.volume < maxVolume)
-            {
-                upcomingMusic.volume += speed * Time.deltaTime;
-            }
+            upcomingMusic.volume += speed * Time.deltaTime;
         }
         yield return null;
     }

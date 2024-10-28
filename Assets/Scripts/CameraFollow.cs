@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
+// Camera Follow: keep the camera's position updated with the player's movement
 public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
