@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MovementStats", menuName = "ScriptableObjects/MovementStats", order = 1)]
-public class MovementStats : ScriptableObject
+[CreateAssetMenu(fileName = "MotionStats", menuName = "ScriptableObjects/MotionStats", order = 1)]
+public class MotionStats : ScriptableObject
 {
     [Range(1f, 100f)]
     public float acceleration = 40f;
