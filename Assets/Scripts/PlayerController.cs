@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public MovementStats movementStats;
+    public MotionStats motionStats;
 
     private Rigidbody2D pRigidbody;
     private PlayerInputs _playerInput;
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move(float deltaT)
     {
-        var ms = movementStats;
+        var ms = motionStats;
         float acc = 0;
         if (DashButton.IsPressed() && dashCooldownTimer <= 0) // Start dash
         {
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
     private void Turn(float deltaT)
     {
         float heading = 0;
-        float rotation = movementStats.turnSpeed * deltaT;
+        float rotation = motionStats.turnSpeed * deltaT;
         if (moveR.IsPressed())
         {
             heading -= rotation;
