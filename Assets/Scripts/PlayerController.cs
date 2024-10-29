@@ -1,24 +1,10 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerController : MonoBehaviour
 {
-    [Range(1f, 100f)]
-    public float acceleration = 40f;
-    [Range(1f, 100f)]
-    public float deceleration = 20f;
-    [Range(0f, 100f)]
-    public float maxSpeed = 20f;
-    [Range(-100f, 0f)]
-    public float minSpeed = -10f;
-    [Range(0f, 1000f)]
-    public float rotSpeed = 200f;
-    [Range(0f, 200f)]
-    public float dashSpeed = 60f;
-    [Range(0f, 10f)]
-    public float dashTime = 1f;
-    [Range(0f, 100f)]
-    public float dashCooldown = 5f;
+    public MovementStats movementStats;
 
     private Rigidbody2D pRigidbody;
     private PlayerInputs _playerInput;
@@ -76,7 +62,8 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called 50 times a second on a fixed interval
     private void FixedUpdate()
     {
-        _spriteRenderer.flipY = Mathf.Abs(transform.eulerAngles.z) > 90f;
+        float rot = transform.eulerAngles.z;
+        _spriteRenderer.flipY = rot > 90 && rot < 270;
 
         Move(Time.fixedDeltaTime);
         Turn(Time.fixedDeltaTime);
@@ -84,17 +71,18 @@ public class PlayerController : MonoBehaviour
 
     private void Move(float deltaT)
     {
+        var ms = movementStats;
         float acc = 0;
         if (DashButton.IsPressed() && dashCooldownTimer <= 0) // Start dash
         {
-            targetSpeed = dashSpeed;
-            dashTimer = dashTime;
-            dashCooldownTimer = dashCooldown;
+            targetSpeed = ms.dashSpeed;
+            dashTimer = ms.dashTime;
+            dashCooldownTimer = ms.dashCooldown;
         }
         else if (IsDashing())
         {
             dashTimer -= deltaT;
-            acc = 3 * acceleration;
+            acc = 3 * ms.acceleration;
             if (dashTimer < 0)
             {
                 // Stop dash
@@ -104,18 +92,18 @@ public class PlayerController : MonoBehaviour
         }
         else if (moveU.IsPressed()) // Normal forward
         {
-            targetSpeed = maxSpeed;
-            acc = acceleration;
+            targetSpeed = ms.maxSpeed;
+            acc = ms.acceleration;
         }
         else if (!moveU.IsPressed() && moveD.IsPressed()) // Normal backward
         {
-            targetSpeed = minSpeed;
-            acc = acceleration;
+            targetSpeed = ms.minSpeed;
+            acc = ms.acceleration;
         }
         else // No dash or buttons, decelerate to zero
         {
             targetSpeed = 0;
-            acc = deceleration;
+            acc = ms.deceleration;
         }
 
         // Dash cooldown in progress
@@ -140,13 +128,14 @@ public class PlayerController : MonoBehaviour
     private void Turn(float deltaT)
     {
         float heading = 0;
+        float rotation = movementStats.turnSpeed * deltaT;
         if (moveR.IsPressed())
         {
-            heading -= rotSpeed * deltaT;
+            heading -= rotation;
         }
         else if (moveL.IsPressed())
         {
-            heading += rotSpeed * deltaT;
+            heading += rotation;
         }
         transform.Rotate(heading * Vector3.forward, Space.World);
     }
