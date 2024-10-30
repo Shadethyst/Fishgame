@@ -9,6 +9,12 @@ public class DamageOnCollision : MonoBehaviour
 {
 
     public UnityEvent OnDamageTaken;
+    public UnityEvent onScore;
+    public UnityEvent onItem;
+    
+    public Scorepoints pm;
+    public PickScrewdriver psd;
+    public PlayerHealth ph;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +36,25 @@ public class DamageOnCollision : MonoBehaviour
      
      
      */
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
+
+    void OnTriggerEnter2D(Collider2D other)
+    {    
+        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Enemy"))
         {
-            OnDamageTaken.Invoke();
             Debug.Log("Player collided!");
+            OnDamageTaken.Invoke();
+        }
+        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Pearl"))
+        {   
+            Debug.Log("Player picked a pearl!");
+            onScore.Invoke();
+            gameObject.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Screwdriver"))
+        {   
+            Debug.Log("Player picked a screwdriver!");
+            onItem.Invoke();
+            gameObject.SetActive(false);
         }
         
 

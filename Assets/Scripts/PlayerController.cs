@@ -22,9 +22,10 @@ public class PlayerController : MonoBehaviour
     public float dashTimer;
     public float dashCooldownTimer;
 
+    private bool inControl;
+
     private void OnEnable()
     {
-
     }
     private void OnDisable()
     {
