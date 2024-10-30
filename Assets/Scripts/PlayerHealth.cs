@@ -2,11 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
 
     public float health = 3;
+    public Text healthText;
+    public GameObject gameOverScreen;
+    public bool fishIsAlive = true;
     // Start is called before the first frame update
 
 
@@ -24,9 +29,11 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthText.text = health.ToString();
         if(health <= 0)
         {
-
+            gameOver();
+            fishIsAlive = false;
         }
     }
 
@@ -34,5 +41,16 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         Debug.Log("Health changed to: " + health);
+    }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+
+    public void gameOver()
+    {
+        gameOverScreen.SetActive(true);
     }
 }
