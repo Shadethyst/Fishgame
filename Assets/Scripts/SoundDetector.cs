@@ -45,7 +45,7 @@ public class SoundDetector : MonoBehaviour
 
     bool CheckSurroundings(LayerMask layerName)
     {
-        return Physics.CheckSphere(transform.position, detectionRange, layerName);
+        return Physics2D.OverlapCircle(transform.position, detectionRange, layerName);
     }
 
     public SoundState GetSoundState()
