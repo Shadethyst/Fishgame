@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Jellyfish_animation_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 896
+        width: 749
+        height: 759
+      alignment: 9
+      pivot: {x: 0.5306984, y: 0.88221914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d4c916d50444579b7a2831202d81e6
+      internalID: 724163478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jellyfish_animation_1
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1207
+        width: 750
+        height: 456
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dde30324d80194a47bc5794d005d844f
+      internalID: -514869129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jellyfish_animation_2
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 728
+        width: 86
+        height: 836
+      alignment: 9
+      pivot: {x: 0.45484534, y: 0.9598698}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2062e99535e54c09b18e7f1beb4c783
+      internalID: 1311302093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jellyfish_animation_3
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 652
+        width: 98
+        height: 971
+      alignment: 9
+      pivot: {x: 0.5396268, y: 0.96392184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56783668e67045d9adc1e14341e23fa
+      internalID: -1136797392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jellyfish_animation_4
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 246
+        width: 96
+        height: 854
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9547242}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c511aafac395411fa7e95c1f40bed06
+      internalID: -1445367069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jellyfish_animation_5
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 162
+        width: 83
+        height: 877
+      alignment: 9
+      pivot: {x: 0.5, y: 0.95608276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4179d9cc134114cd7981de8c3bfa36fc
+      internalID: -238178595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jellyfish_animation_6
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 179
+        width: 124
+        height: 895
+      alignment: 9
+      pivot: {x: 0.53131795, y: 0.95992684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c0a29df03fe4bcca3c9dff5c852a69
+      internalID: 1886308066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +266,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Jellyfish_animation_0: 724163478
+      Jellyfish_animation_1: -514869129
+      Jellyfish_animation_2: 1311302093
+      Jellyfish_animation_3: -1136797392
+      Jellyfish_animation_4: -1445367069
+      Jellyfish_animation_5: -238178595
+      Jellyfish_animation_6: 1886308066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
