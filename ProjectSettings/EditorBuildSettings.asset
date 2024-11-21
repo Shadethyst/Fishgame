@@ -5,8 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Inka_testScene_better.unity
+    guid: 67ff467ecc3304642a7a7cb767d5ca67
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 84b9418f3e9644a49a1d2a75cf2362df, type: 3}
