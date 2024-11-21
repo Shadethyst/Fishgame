@@ -49,6 +49,11 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+    }
+
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
