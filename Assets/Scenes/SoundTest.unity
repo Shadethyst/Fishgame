@@ -1611,6 +1611,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7141991544003494832, guid: e0f6efcc9ab930f48b227f886187dd9b, type: 3}
+      propertyPath: idleMinVolume
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141991544003494832, guid: e0f6efcc9ab930f48b227f886187dd9b, type: 3}
+      propertyPath: transitionSpeed
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141991544003494832, guid: e0f6efcc9ab930f48b227f886187dd9b, type: 3}
       propertyPath: soundStateManager
       value: 
       objectReference: {fileID: 397441965}
