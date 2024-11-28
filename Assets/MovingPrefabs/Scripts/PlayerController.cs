@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public float targetSpeed;
     public float dashTimer;
     public float dashCooldownTimer;
+    public bool hidden;
 
     private bool inControl;
 
