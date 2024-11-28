@@ -12,14 +12,11 @@ public class VolumeController : MonoBehaviour
     [SerializeField] private AudioMixer musicMixer;
     [SerializeField] private AudioMixer sfxMixer;
 
+    [SerializeField] private AudioSource soundTestSource;
+
     private float musicVolumeValue;
     private float sfxVolumeValue;
 
-
-    private void Awake()
-    {
-        ResetAllVolumes();
-    }
 
     private void Start()
     {
@@ -35,10 +32,6 @@ public class VolumeController : MonoBehaviour
 
     public void ResetAllVolumes()
     {
-
-        PlayerPrefs.DeleteKey("musicVolume");
-        PlayerPrefs.DeleteKey("sfxVolume");
-
         musicSlider.value = 1.0f;
         sfxSlider.value = 1.0f;
 
@@ -57,7 +50,7 @@ public class VolumeController : MonoBehaviour
         }
         else
         {
-            UpdateMusicVolume();
+            ResetAllVolumes();
         }
     }
     public void PrepareSFXVolume()
@@ -68,7 +61,7 @@ public class VolumeController : MonoBehaviour
         }
         else
         {
-            UpdateSFXVolume();
+            ResetAllVolumes();
         }
     }
 
@@ -94,7 +87,15 @@ public class VolumeController : MonoBehaviour
 
     public void LoadSFXVolume()
     {
+        StartCoroutine(MuteTestSoundWhenLoadingAudioSettings(1));
         sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
         UpdateSFXVolume();
+    }
+
+    public IEnumerator MuteTestSoundWhenLoadingAudioSettings(float seconds)
+    {
+        soundTestSource.mute = true;
+        yield return new WaitForSeconds(seconds);
+        soundTestSource.mute = false;
     }
 }
