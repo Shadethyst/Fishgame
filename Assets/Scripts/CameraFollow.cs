@@ -9,9 +9,9 @@ public class CameraFollow : MonoBehaviour
     public GameObject player;
     private float cameraOnX = 0;
     private float cameraOnY = 0;
-    private float cameraOnZ = -10;
+    private float cameraOnZ = -20;
 
-    // Update is called once per frame
+    // Update is called once per framedw
     void Update()
     {
         Vector3 cameraPosition = player.transform.position;

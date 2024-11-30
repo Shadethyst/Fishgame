@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9611cbf248e8a4b94150471005224a, type: 3}
   m_Name: PlayerMotionStats
   m_EditorClassIdentifier: 
-  acceleration: 40
-  deceleration: 20
-  maxSpeed: 20
-  minSpeed: -10
+  acceleration: 20
+  deceleration: 10
+  maxSpeed: 15
+  minSpeed: -5
   turnSpeed: 200
-  dashSpeed: 60
-  dashTime: 1
+  dashSpeed: 50
+  dashTime: 0.6
   dashCooldown: 5
