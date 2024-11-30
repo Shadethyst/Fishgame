@@ -17,6 +17,6 @@ MonoBehaviour:
   maxSpeed: 15
   minSpeed: -5
   turnSpeed: 200
-  dashSpeed: 50
-  dashTime: 0.6
+  dashSpeed: 100
+  dashTime: 0.4
   dashCooldown: 5

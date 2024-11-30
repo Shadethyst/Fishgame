@@ -10,6 +10,7 @@ public class Scorepoints : MonoBehaviour
 
     public int pearlCount;
     public Text pearlText;
+    public UnityEvent Scored;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,15 @@ public class Scorepoints : MonoBehaviour
     void Update()
     {
         pearlText.text = pearlCount.ToString();
+        
     }
 
     public void pearlAdded(){
         pearlCount++;
+        if (pearlCount%10 == 0)
+        {
+            Scored.Invoke();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D Pearl)

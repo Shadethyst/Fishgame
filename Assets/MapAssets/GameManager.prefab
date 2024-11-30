@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 53947007654642800}
   - component: {fileID: 714678871903921758}
   - component: {fileID: 4452104393877098070}
-  - component: {fileID: 8493701311262967076}
+  - component: {fileID: 6055701362432068783}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -66,7 +66,7 @@ MonoBehaviour:
   sdCount: 0
   sdText: {fileID: 0}
   door: {fileID: 0}
---- !u!114 &8493701311262967076
+--- !u!114 &6055701362432068783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 324754370306180800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 959d32c4d261c9f4f80e215512216065, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f7ca3ddf1b4fca41a30d2877fbf12ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3

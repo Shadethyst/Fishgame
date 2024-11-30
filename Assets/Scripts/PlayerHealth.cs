@@ -42,6 +42,14 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         Debug.Log("Health changed to: " + health);
     }
+    public void addHealth(float healing)
+    {
+        if(health < 5)
+        {
+            health += healing;
+        }
+
+    }
 
     public void restartGame()
     {
