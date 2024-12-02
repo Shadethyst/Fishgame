@@ -2,45 +2,70 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using System;
 using UnityEngine.UI;
 
 public class Scorepoints : MonoBehaviour
 {
+    [Header("Score Settings")]
+    public int pearlCount = 0; // Initial pearl count
+    public Text pearlText; // UI Text to display the pearl count
 
-    public int pearlCount;
-    public Text pearlText;
-    public UnityEvent Scored;
-    // Start is called before the first frame update
+    [Header("Events")]
+    public UnityEvent Scored; // Event triggered when a score milestone is reached
+
+    [Header("Audio")]
+    private SFXManager sfxManager; // Reference to the SFXManager
+
     void Start()
     {
+        // Find and assign the SFXManager
+        sfxManager = FindObjectOfType<SFXManager>();
         
+        // Initialize the pearl count text
+        UpdatePearlText();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        pearlText.text = pearlCount.ToString();
-        
+        // Continuously update the pearl count text
+        UpdatePearlText();
     }
 
-    public void pearlAdded(){
+    public void PearlAdded()
+    {
         pearlCount++;
-        if (pearlCount%10 == 0)
+        UpdatePearlText();
+
+        // Trigger Scored event every 10 pearls
+        if (pearlCount % 10 == 0)
         {
             Scored.Invoke();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D Pearl)
+    private void UpdatePearlText()
     {
-        if (Pearl.gameObject.tag.Equals("Player"))
+        if (pearlText != null)
         {
-            Debug.Log("Player picked pearl!");
+            pearlText.text = pearlCount.ToString();
         }
-        
-
     }
 
-}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Play sound effect using SFXManager
+            if (sfxManager != null)
+            {
+                sfxManager.PlayPearlSound();
+            }
 
+            // Increment the pearl count and invoke events
+            PearlAdded();
+
+            // Destroy the pearl after collection
+            Destroy(gameObject);
+        }
+    }
+}
