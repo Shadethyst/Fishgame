@@ -10,10 +10,11 @@ public class DamageOnCollision : MonoBehaviour
     public UnityEvent OnDamageTaken;
     public UnityEvent onScore;
     public UnityEvent onItem;
+    public UnityEvent OnDoor;
+    public UnityEvent openDoor;
+
+    public bool pickedUp;
     
-    public Scorepoints pm;
-    public PickScrewdriver psd;
-    public PlayerHealth ph;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,10 +53,22 @@ public class DamageOnCollision : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Screwdriver"))
         {   
             Debug.Log("Player picked a screwdriver!");
+            pickedUp = true;
             onItem.Invoke();
             gameObject.SetActive(false);
         }
-        
+        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Door"))
+        {
+            Debug.Log("Player collided with a door!");
+            OnDoor.Invoke();
+        }
+        if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Door") && pickedUp)
+        {
+            Debug.Log("Player opened a door!");
+            openDoor.Invoke();
+            gameObject.SetActive(false);
+        }
+     
 
     }
 }

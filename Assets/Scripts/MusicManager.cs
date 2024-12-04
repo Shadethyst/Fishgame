@@ -6,8 +6,7 @@ using UnityEngine;
 // MUSIC MANAGER: HANDLES THE MUSIC INTERACTION OF THE GAME
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] [Range(0,1)] private float maxVolume; // Defines the MAXIMUM volume of ALL MUSIC
-    [SerializeField] [Range(0, 1)] private float idleMinVolume; // Defines the MINIMUM volume of IDLE MUSIC ONLY
+    [SerializeField] [Range(0,1)] private float maxVolume; // Defines the maximum volume
     [SerializeField] [Range(0, 1)] private float transitionSpeed; // Time between the transition between two music tracks
 
     // Different Music Sources listed separately
@@ -48,14 +47,14 @@ public class MusicManager : MonoBehaviour
 
     /* StartMusicTransition:
      * BASIC STEPS: 
-     * 1) all the music tracks (except the upcoming music track) will decrease to 0 (or to idleMinVolume's value if the current music is idle music)
+     * 1) all the music tracks (except the upcoming music track) will decrease to 0
      * 2) when each track has decreased under the certain volume (transitionBreakpoint), the checkCounter is incremented by 1
      * 3) when all the music tracks are checked, the upcoming music track will increase to maxVolume
      * RESULT: The transition between music tracks will be smooth and flexible to varying situations
      */
     IEnumerator StartMusicTransition(AudioSource upcomingMusic, float speed)
     {
-        float transitionBreakpoint = idleMinVolume + 0.4f;
+        float transitionBreakpoint = maxVolume * 0.2f;
         AudioSource[] musictracks = { idleMusicSource, enemyMusicSource, sharkMusicSource };
         int checkCounter = 0;
         
@@ -67,11 +66,6 @@ public class MusicManager : MonoBehaviour
             {
                 musictracks[i].volume -= speed * Time.deltaTime;
                 volumeIndicator = musictracks[i].volume;
-            }
-
-            if (musictracks[i] == idleMusicSource && musictracks[i].volume < idleMinVolume)
-            {
-                musictracks[i].volume = idleMinVolume;
             }
 
             if (volumeIndicator <= transitionBreakpoint || musictracks[i] == upcomingMusic)

@@ -21,7 +21,6 @@ public class Scorepoints : MonoBehaviour
     void Update()
     {
         pearlText.text = pearlCount.ToString();
-        
     }
 
     public void pearlAdded(){

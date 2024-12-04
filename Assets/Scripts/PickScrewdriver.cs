@@ -7,34 +7,32 @@ using UnityEngine.UI;
 
 public class PickScrewdriver : MonoBehaviour
 {
+    [SerializeField] GameObject player;
 
-    public UnityEvent OnDamageTaken;
+    public bool isPickedUp;
     public int sdCount;
-    public Text sdText;
-    public GameObject door;
-    private bool doorDestroyed;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        sdText.text = sdCount.ToString();
-        if(sdCount == 1)
-        {
-            Destroy(door);
-        }
+    }
+
+    public void screwdriverAdded(){
+        sdCount++;
+        isPickedUp = true;
     }
 
 
     private void OnTriggerEnter2D(Collider2D Screwdriver)
     {
-        if (Screwdriver.gameObject.tag.Equals("Player"))
+        if (Screwdriver.gameObject.tag.Equals("Player") && !isPickedUp)
         {
-            OnDamageTaken.Invoke();
             Debug.Log("Player picked Screwdriver!");
         }
         
