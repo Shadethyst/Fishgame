@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     private void OnEnable()
     {
         Debug.Log("Timer started");
+        elapsedTime = 0;
     }
 
     void Update()
