@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class Scorepoints : MonoBehaviour
 {
+    public static int pearlCount = 0;
 
-    public int pearlCount;
     public Text pearlText;
     public UnityEvent Scored;
     // Start is called before the first frame update
