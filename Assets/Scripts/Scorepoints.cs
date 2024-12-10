@@ -11,10 +11,11 @@ public class Scorepoints : MonoBehaviour
 
     public Text pearlText;
     public UnityEvent Scored;
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
-        
+        Debug.Log("Scoring started");
+        pearlCount = 0;
     }
 
     // Update is called once per frame
