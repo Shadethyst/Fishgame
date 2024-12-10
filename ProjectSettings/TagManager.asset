@@ -8,6 +8,8 @@ TagManager:
   - Screwdriver
   - Door
   - Enemy
+  - Music
+  - SoundStateManager
   layers:
   - Default
   - TransparentFX

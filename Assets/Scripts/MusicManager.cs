@@ -14,9 +14,22 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioSource idleMusicSource;
     [SerializeField] private AudioSource enemyMusicSource;
     [SerializeField] private AudioSource sharkMusicSource;
+    [SerializeField] private AudioSource winMusicSource;
 
     public SoundState soundstate; // SoundState defines which music will become to play
     public SoundStateManager soundStateManager; // SoundStateManager keeps track of the current SoundState
+
+
+    void Awake()
+    {
+        GameObject[] musicObjects = GameObject.FindGameObjectsWithTag("Music");
+        if (musicObjects.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +57,10 @@ public class MusicManager : MonoBehaviour
         {
             StartCoroutine(StartMusicTransition(sharkMusicSource, transitionSpeed));
         }
+        if (soundstate == SoundState.Win)
+        {
+            StartCoroutine(StartMusicTransition(winMusicSource, transitionSpeed));
+        }
     }
 
     /* StartMusicTransition:
@@ -56,7 +73,7 @@ public class MusicManager : MonoBehaviour
     IEnumerator StartMusicTransition(AudioSource upcomingMusic, float speed)
     {
         float transitionBreakpoint = idleMinVolume + 0.4f;
-        AudioSource[] musictracks = { idleMusicSource, enemyMusicSource, sharkMusicSource };
+        AudioSource[] musictracks = { idleMusicSource, enemyMusicSource, sharkMusicSource, winMusicSource };
         int checkCounter = 0;
         
         for(int i = 0; i < musictracks.Length; i++)
@@ -78,10 +95,12 @@ public class MusicManager : MonoBehaviour
             {
                 checkCounter++;
             }
+
         }
 
         if (checkCounter == musictracks.Length && upcomingMusic.volume < maxVolume)
         {
+            upcomingMusic.playOnAwake = true;
             upcomingMusic.volume += speed * Time.deltaTime;
         }
         yield return null;
