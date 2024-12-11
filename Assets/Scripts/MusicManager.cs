@@ -19,18 +19,6 @@ public class MusicManager : MonoBehaviour
     public SoundState soundstate; // SoundState defines which music will become to play
     public SoundStateManager soundStateManager; // SoundStateManager keeps track of the current SoundState
 
-
-    void Awake()
-    {
-        GameObject[] musicObjects = GameObject.FindGameObjectsWithTag("Music");
-        if (musicObjects.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
-
-        DontDestroyOnLoad(this.gameObject);
-    }
-
     // Start is called before the first frame update
     void Start()
     {
