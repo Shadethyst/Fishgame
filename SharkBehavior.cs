@@ -9,13 +9,14 @@ public class SharkBehavior : MonoBehaviour
 
     [Header("Chase Settings")]
     public float chaseSpeed = 4f;
-    private Transform player;
+    public GameObject player;
 
     [Header("Detection Settings")]
     public float detectionRadius = 5f;
     public LayerMask playerLayer;
 
     private bool isChasing = false;
+    private Vector3 chaseStart;
     private Vector3 currentTarget;
 
     private SFXManager sfxManager;
@@ -44,21 +45,13 @@ void OnTriggerEnter2D(Collider2D collision)
     currentTarget = pointB.position;
 
     // Find player
-    GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-    if (playerObject != null)
-    {
-        player = playerObject.transform;
+    player = GameObject.FindGameObjectWithTag("Player");
+    if (playerObject != null){
+
     }
     else
     {
         Debug.LogError("Player object not found!");
-    }
-
-    // Find SFXManager
-    sfxManager = FindObjectOfType<SFXManager>();
-    if (sfxManager == null)
-    {
-        Debug.LogError("SFXManager is missing in the scene!");
     }
 }
 
@@ -70,21 +63,13 @@ void OnTriggerEnter2D(Collider2D collision)
         // Detect player
         bool playerDetected = Physics2D.OverlapCircle(transform.position, detectionRadius, playerLayer);
 
-        if (playerDetected)
+        if (playerDetected && !player.isHidden())
         {
             StartChasing();
-            if (sfxManager != null)
-            {
-                sfxManager.SwitchToSharkMusic(true);
-            }
         }
         else
         {
             StopChasing();
-            if (sfxManager != null)
-            {
-                sfxManager.SwitchToSharkMusic(false);
-            }
         }
 
         // Perform actions
@@ -101,6 +86,7 @@ void OnTriggerEnter2D(Collider2D collision)
     public void StartChasing()
     {
         isChasing = true;
+        chaseStart = transform.position;
     }
 
     public void StopChasing()
@@ -121,9 +107,12 @@ void OnTriggerEnter2D(Collider2D collision)
 
     private void ChasePlayer()
     {
-        if (player != null)
+        if(((Mathf.abs(transform.position.x) + Mathf.abs(transform.position.y) - (Mathf.abs(chaseStart.x)+Mathf.abs(chaseStart.y))) > 10))){
+            StopChasing();
+        }
+        else if (player != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
         }
     }
 
