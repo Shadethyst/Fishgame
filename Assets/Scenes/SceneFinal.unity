@@ -4034,6 +4034,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2069024772362936560, guid: d7b1f3a86491d3e41b15d40825c5c497, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069024772362936560, guid: d7b1f3a86491d3e41b15d40825c5c497, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9580476
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069024772362936560, guid: d7b1f3a86491d3e41b15d40825c5c497, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9198113
+      objectReference: {fileID: 0}
     - target: {fileID: 2335396158832586648, guid: d7b1f3a86491d3e41b15d40825c5c497, type: 3}
       propertyPath: m_Name
       value: Coral_2 (8)
