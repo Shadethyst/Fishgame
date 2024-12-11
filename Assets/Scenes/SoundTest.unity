@@ -1448,6 +1448,7 @@ MonoBehaviour:
   targetSpeed: 0
   dashTimer: 0
   dashCooldownTimer: 0
+  hidden: 0
 --- !u!1001 &1073618753679848919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1517,6 +1518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6840955045368539548, guid: e182b359342d0374286989c46abae5a3, type: 3}
+      propertyPath: splashDiveSoundSource
+      value: 
+      objectReference: {fileID: 2361537544402060060}
     - target: {fileID: 8168878644090107763, guid: e182b359342d0374286989c46abae5a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.5498283
@@ -1562,6 +1567,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e182b359342d0374286989c46abae5a3, type: 3}
+--- !u!82 &2361537544402060060 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 421674646414133832, guid: e182b359342d0374286989c46abae5a3, type: 3}
+  m_PrefabInstance: {fileID: 2361537544402060059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4726716883686105932
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,5 +2,6 @@ public enum SoundState
 {
     Idle,
     Enemy,
-    Shark
+    Shark,
+    Win
 }
