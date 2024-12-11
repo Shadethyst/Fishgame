@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     private PlayerInputs _playerInput;
     private SpriteRenderer _spriteRenderer;
 
+    [SerializeField] private SFXManager sfxManager;
+    [SerializeField] private AudioSource diveSoundSource;
+
     InputAction moveR;
     InputAction moveU;
     InputAction moveL;
@@ -77,6 +80,7 @@ public class PlayerController : MonoBehaviour
         float acc = 0;
         if (DashButton.IsPressed() && dashCooldownTimer <= 0) // Start dash
         {
+            sfxManager.PlaySound(diveSoundSource);
             targetSpeed = ms.dashSpeed;
             dashTimer = ms.dashTime;
             dashCooldownTimer = ms.dashCooldown;
