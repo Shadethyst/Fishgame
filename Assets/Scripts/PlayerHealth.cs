@@ -8,48 +8,42 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public float health = 3;
-    public Text healthText;
+    public float currenthealth;
+    [SerializeField] public float startinghealth = 3;
+    public Image healthImage;
     public GameObject gameOverScreen;
     public bool fishIsAlive = true;
     // Start is called before the first frame update
 
 
-    private void OnEnable()
+    private void Awake()
     {
-    }
-    private void OnDisable()
-    {
-    }
-    void Start()
-    {
-        
+        currenthealth = startinghealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damage)
     {
-        healthText.text = health.ToString();
-        if(health <= 0)
+        currenthealth = Mathf.Clamp(currenthealth - damage, 0, startinghealth);
+        
+        if (currenthealth > 0)
+        {
+            //hurt
+        }
+        else
         {
             gameOver();
             fishIsAlive = false;
         }
     }
-
-    public void TakeDamage(float damage)
+       public void addHealth(float healing)
     {
-        health -= damage;
-        Debug.Log("Health changed to: " + health);
-    }
-    public void addHealth(float healing)
-    {
-        if(health < 5)
+        if(currenthealth < 3)
         {
-            health += healing;
+            currenthealth += healing;
         }
 
     }
+
 
     public void restartGame()
     {
