@@ -68,8 +68,13 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         float rot = transform.eulerAngles.z;
-        _spriteRenderer.flipY = rot > 90 && rot < 270;
+        /*
+        foreach (var renderer in GetComponentsInChildren<SpriteRenderer>())
+        {
 
+        }
+        _spriteRenderer.flipY = rot > 90 && rot < 270;
+        * rot > 90 && rot < 270*/
         Move(Time.fixedDeltaTime);
         Turn(Time.fixedDeltaTime);
     }
@@ -145,7 +150,14 @@ public class PlayerController : MonoBehaviour
         }
         transform.Rotate(heading * Vector3.forward, Space.World);
     }
-
+    public void hiding()
+    {
+        hidden = true;
+    }
+    public void leavehiding()
+    {
+        hidden = false;
+    }
     private bool IsDashing() { return dashTimer > 0; }
 
 

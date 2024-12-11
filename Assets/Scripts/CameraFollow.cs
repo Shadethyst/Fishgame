@@ -10,15 +10,33 @@ public class CameraFollow : MonoBehaviour
     private float cameraOnX = 0;
     private float cameraOnY = 0;
     private float cameraOnZ = -20;
+    [SerializeField] public float mapboundXUp;
+    [SerializeField] public float mapboundYUp;
+    [SerializeField] public float mapboundXDown;
+    [SerializeField] public float mapboundYDown;
+    Vector3 cameraPosition;
 
-    // Update is called once per framedw
+    private void Start()
+    {
+        cameraPosition = player.transform.position;
+        cameraPosition.z = cameraOnZ;
+    }
+    // Update is called once per frame
     void Update()
     {
-        Vector3 cameraPosition = player.transform.position;
-        cameraPosition.x += cameraOnX;
-        cameraPosition.y += cameraOnY;
+        if ((player.transform.position.x < mapboundXUp) && (player.transform.position.x > mapboundXDown))
+        {
+            cameraPosition.x = player.transform.position.x;
+        }
+        if ((player.transform.position.y < mapboundYUp) && (player.transform.position.y > mapboundYDown)) {
+            cameraPosition.y = player.transform.position.y;
+        }
         cameraPosition.z = cameraOnZ;
         transform.position = cameraPosition;
+
+
+
+
 
     }
 }
