@@ -72,9 +72,8 @@ public class PlayerController : MonoBehaviour
         foreach (var renderer in GetComponentsInChildren<SpriteRenderer>())
         {
 
-        }
+        }*/
         _spriteRenderer.flipY = rot > 90 && rot < 270;
-        * rot > 90 && rot < 270*/
         Move(Time.fixedDeltaTime);
         Turn(Time.fixedDeltaTime);
     }
