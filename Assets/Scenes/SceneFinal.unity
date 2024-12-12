@@ -1224,9 +1224,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2503,9 +2539,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7103,9 +7175,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7643,10 +7751,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1284676894}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
 --- !u!4 &304113587 stripped
 Transform:
@@ -8607,9 +8712,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14015,9 +14156,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15820,9 +15997,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21069,10 +21282,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1592079921}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
 --- !u!4 &1019048235 stripped
 Transform:
@@ -23031,9 +23241,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26046,7 +26292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
       propertyPath: m_Name
-      value: Shark (1)
+      value: Shark
       objectReference: {fileID: 0}
     - target: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
       propertyPath: m_Layer
@@ -26162,7 +26408,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 987454464741018621, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1418609820}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
       insertIndex: -1
@@ -26170,9 +26419,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2068210916}
-    - targetCorrespondingSourceObject: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2068210921}
   m_SourcePrefab: {fileID: 100100000, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
 --- !u!4 &1213356924 stripped
 Transform:
@@ -27759,46 +28005,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80425d78efcf1744ba0d45b78956ac12, type: 3}
---- !u!1 &1284676889 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
-  m_PrefabInstance: {fileID: 304113586}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &1284676894
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284676889}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0}
-  m_Size: {x: 14, y: 6}
-  m_Direction: 1
 --- !u!1001 &1302756407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28398,9 +28604,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29947,6 +30189,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1418609819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418609820}
+  - component: {fileID: 1418609821}
+  m_Layer: 7
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1418609820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418609819}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1213356924}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1418609821
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418609819}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 14, y: 6}
+  m_Direction: 1
 --- !u!1001 &1420121907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31251,10 +31560,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2129990258}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
 --- !u!4 &1459646996 stripped
 Transform:
@@ -31375,9 +31681,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33383,46 +33725,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9222067613813267188, guid: ad9ffeebdb2859f4c997896b21976a0e, type: 3}
   m_PrefabInstance: {fileID: 1591072460}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1592079916 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
-  m_PrefabInstance: {fileID: 1019048234}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &1592079921
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592079916}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0}
-  m_Size: {x: 14, y: 6}
-  m_Direction: 1
 --- !u!1001 &1593114191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33685,9 +33987,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34721,9 +35059,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37205,9 +37579,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43052,9 +43462,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43772,7 +44218,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 3
 --- !u!114 &2068210916
 MonoBehaviour:
@@ -43786,41 +44232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972eb16aee2826743aaabf27acc0f053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &2068210921
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068210904}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0.000061035156}
-  m_Size: {x: 14, y: 6}
-  m_Direction: 1
 --- !u!1001 &2071779489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43902,9 +44313,45 @@ PrefabInstance:
       propertyPath: OnDamageTaken.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1826411846}
+    - target: {fileID: 1760001663663827410, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055515289043642845, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504612231754066284, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006415784606897476, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390271973359541147, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_Name
       value: JellyfishAnim (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399339942823817904, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630348126329392288, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824232976150147421, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44990,46 +45437,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7094247168324581277, guid: 5fa23a3be578aa14081a64170ff383da, type: 3}
   m_PrefabInstance: {fileID: 279246292}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2129990253 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3061105480650359629, guid: 84a1af842803d584abc12f6ab0bf79c7, type: 3}
-  m_PrefabInstance: {fileID: 1459646995}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &2129990258
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129990253}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0}
-  m_Size: {x: 14, y: 6}
-  m_Direction: 1
 --- !u!4 &2130371219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4808955107923397624, guid: a967cad3d675ca9429ce235a6317f5ab, type: 3}

@@ -6,6 +6,7 @@ public class SharkBehavior : MonoBehaviour
     public Transform pointA;
     public Transform pointB;
     public float patrolSpeed = 2f;
+    private Rigidbody2D Srigidbody;
 
     [Header("Chase Settings")]
     public float chaseSpeed = 4f;
@@ -33,10 +34,15 @@ void OnTriggerEnter2D(Collider2D collision)
     }
 }
 
+    private void Awake()
+    {
+        Srigidbody = GetComponent<Rigidbody2D>();
+    }
     private void Start()
 {
     if (pointA == null || pointB == null)
     {
+
         Debug.LogError("Patrol points are not assigned!");
         enabled = false; // Disable the script
         return;
@@ -109,6 +115,8 @@ void OnTriggerEnter2D(Collider2D collision)
         }
         else if (player != null)
         {
+            //Vector2 targetDirection = (player.transform.position - transform.position);
+            //Srigidbody.MovePosition((Vector2)transform.position+(Vector2)targetDirection*chaseSpeed* Time.deltaTime);
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
         }
     }
