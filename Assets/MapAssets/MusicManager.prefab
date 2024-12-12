@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVolume: 1
   idleMinVolume: 0
-  transitionSpeed: 0.55
+  transitionSpeed: 0.8
   idleMusicSource: {fileID: 3974337953325781727}
   enemyMusicSource: {fileID: 5702088738298019890}
   sharkMusicSource: {fileID: 2289538712418821901}
