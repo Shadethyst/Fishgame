@@ -6,7 +6,7 @@ public class SharkBehavior : MonoBehaviour
     public Transform pointA;
     public Transform pointB;
     public float patrolSpeed = 2f;
-    private Rigidbody2D Srigidbody;
+
 
     [Header("Chase Settings")]
     public float chaseSpeed = 4f;
@@ -19,6 +19,7 @@ public class SharkBehavior : MonoBehaviour
     private bool isChasing = false;
     private Vector3 chaseStart;
     private Vector3 currentTarget;
+    private Rigidbody2D Srigidbody;
 
     private SFXManager sfxManager;
 void OnTriggerEnter2D(Collider2D collision)
@@ -64,6 +65,10 @@ void OnTriggerEnter2D(Collider2D collision)
 
     private void Update()
     {
+
+    }
+    private void FixedUpdate()
+    {
         if (player == null || pointA == null || pointB == null) return;
 
         // Detect player
@@ -72,6 +77,10 @@ void OnTriggerEnter2D(Collider2D collision)
         if (playerDetected && player.GetComponent<PlayerController>().hidden == false)
         {
             StartChasing();
+        }
+        else
+        {
+            StopChasing();
         }
 
         // Perform actions
@@ -87,8 +96,12 @@ void OnTriggerEnter2D(Collider2D collision)
 
     public void StartChasing()
     {
+        if(isChasing == false)
+        {
+            chaseStart = transform.position;
+        }
         isChasing = true;
-        chaseStart = transform.position;
+
     }
 
     public void StopChasing()
@@ -98,10 +111,16 @@ void OnTriggerEnter2D(Collider2D collision)
 
     private void Patrol()
     {
-        transform.position = Vector3.MoveTowards(transform.position, currentTarget, patrolSpeed * Time.deltaTime);
+        Vector2 patDirection = (currentTarget - transform.position).normalized;
+        /*debug for why shark movement wasn't working
+         * Debug.Log(patDirection);
+        Debug.Log((Vector2)Srigidbody.position);
+        Debug.Log((Vector2)Srigidbody.position + patDirection * patrolSpeed * Time.fixedDeltaTime);*/
+        Srigidbody.MovePosition((Vector2)transform.position+patDirection*patrolSpeed*Time.fixedDeltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, currentTarget, patrolSpeed * Time.deltaTime);
 
         // Switch patrol target
-        if (Vector3.Distance(transform.position, currentTarget) < 0.1f)
+        if (Vector2.Distance(transform.position, currentTarget) < 0.5f)
         {
             currentTarget = currentTarget == pointA.position ? pointB.position : pointA.position;
             gameObject.GetComponent<SpriteRenderer>().flipX = !gameObject.GetComponent<SpriteRenderer>().flipX;
@@ -110,14 +129,16 @@ void OnTriggerEnter2D(Collider2D collision)
 
     private void ChasePlayer()
     {
-        if(((Mathf.Abs(transform.position.x) + Mathf.Abs(transform.position.y) - (Mathf.Abs(chaseStart.x)+Mathf.Abs(chaseStart.y))) > 20) || player.GetComponent<PlayerController>().hidden == true){
+        /*if(((Mathf.Abs(transform.position.x) + Mathf.Abs(transform.position.y) - (Mathf.Abs(chaseStart.x)+Mathf.Abs(chaseStart.y))) > 10) || player.GetComponent<PlayerController>().hidden == true){
+            Debug.Log("stopped chasing");
             StopChasing();
-        }
-        else if (player != null)
+        }*/
+        if (player != null)
         {
-            //Vector2 targetDirection = (player.transform.position - transform.position);
-            //Srigidbody.MovePosition((Vector2)transform.position+(Vector2)targetDirection*chaseSpeed* Time.deltaTime);
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
+            Vector2 targetDirection = (player.transform.position - transform.position).normalized;
+            Debug.Log(targetDirection);
+            Srigidbody.MovePosition((Vector2)transform.position+(Vector2)targetDirection*chaseSpeed* Time.fixedDeltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
         }
     }
 
