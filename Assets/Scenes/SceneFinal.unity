@@ -5939,9 +5939,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 998365213671025573, guid: e182b359342d0374286989c46abae5a3, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3956789555456726792, guid: e182b359342d0374286989c46abae5a3, type: 3}
       propertyPath: m_Name
       value: SFXManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205879324579195371, guid: e182b359342d0374286989c46abae5a3, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442801544092712503, guid: e182b359342d0374286989c46abae5a3, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6840955045368539548, guid: e182b359342d0374286989c46abae5a3, type: 3}
       propertyPath: splashDiveSoundSource
@@ -11883,7 +11895,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4400152504047795295, guid: 36911699850fd3842acce1b7aad4c70b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 87ce611a4de118449a19188987836832, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -34930,7 +34942,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4211060510875697230, guid: 36911699850fd3842acce1b7aad4c70b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 36e9a173b5be0d04c8c9836b4ecd5a56, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
