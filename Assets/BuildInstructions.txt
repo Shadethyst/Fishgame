@@ -1,0 +1,8 @@
+Unity editor version: 2022.3.49f1
+unity input system package needs to be installed
+Build settings:
+scenes:
+Main menu
+SceneFinal
+Winscene
+scenes need to be in this order because of the scene transition scripts implementation
