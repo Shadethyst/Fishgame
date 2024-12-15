@@ -47867,6 +47867,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: a9091b50a3c74405da204ec87f83f8a5, type: 3}
+    - target: {fileID: 5214204069271224272, guid: 7e9bbb5299e019b4a88ff4bbe4aaa78d, type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214204069271224272, guid: 7e9bbb5299e019b4a88ff4bbe4aaa78d, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6562927928077078526, guid: 7e9bbb5299e019b4a88ff4bbe4aaa78d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
