@@ -20,3 +20,5 @@ MonoBehaviour:
   dashSpeed: 100
   dashTime: 0.4
   dashCooldown: 5
+  reboundStrength: 30
+  reboundDecay: 0.9

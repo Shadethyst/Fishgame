@@ -21,4 +21,8 @@ public class MotionStats : ScriptableObject
     public float dashTime = 1f;
     [Range(0f, 100f)]
     public float dashCooldown = 5f;
+    [Range(0f, 100f)]
+    public float reboundStrength = 100f;
+    [Range(0.1f, 1.0f)]
+    public float reboundDecay = 0.9f;
 }

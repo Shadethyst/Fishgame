@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public float dashCooldownTimer;
     public bool hidden;
 
+    private Vector2 rebound;
+
     private bool inControl;
 
     private Vector3 defaultScale;
@@ -110,6 +112,17 @@ public class PlayerController : MonoBehaviour
                 transform.localScale = defaultScale;
             }
         }
+        else if (rebound.magnitude > 0) // Player hit enemy
+        {
+            // Cancel normal movement
+            speed = 0; 
+            // Decay rebound speed
+            rebound *= ms.reboundDecay;
+            if (rebound.magnitude < 0.5)
+            {
+                rebound = Vector2.zero;
+            }
+        }
         else if (moveU.IsPressed()) // Normal forward
         {
             targetSpeed = ms.maxSpeed;
@@ -142,7 +155,7 @@ public class PlayerController : MonoBehaviour
             speed = Mathf.Max(speed - acc * deltaT, targetSpeed);
         }
 
-        pRigidbody.MovePosition((Vector2)transform.position + speed * deltaT * (Vector2)transform.right);
+        pRigidbody.position += (speed * (Vector2)transform.right + rebound) * deltaT;
     }
 
     private void Turn(float deltaT)
@@ -182,6 +195,11 @@ public class PlayerController : MonoBehaviour
     public void takeDamage()
     {
 
+    }
+
+    public void Rebound(Vector2 from)
+    {
+        rebound = ((Vector2)transform.position - from).normalized * motionStats.reboundStrength;
     }
 }
 

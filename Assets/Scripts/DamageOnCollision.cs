@@ -32,8 +32,6 @@ public class DamageOnCollision : MonoBehaviour
     if it is it invokes the OnDamageTaken event, which calls a function,
     currently use case is to call takeDamage in the PlayerHealth script to deal damage to the player
     and also can be used to call PlayerController to add knockback for example
-     
-     
      */
 
     void OnTriggerEnter2D(Collider2D other)
@@ -42,6 +40,8 @@ public class DamageOnCollision : MonoBehaviour
         {
             Debug.Log("Player collided!");
             OnDamageTaken.Invoke();
+
+            other.gameObject.GetComponent<PlayerController>().Rebound((Vector2)transform.position);
         }
         if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("Pearl"))
         {   
@@ -55,7 +55,5 @@ public class DamageOnCollision : MonoBehaviour
             onItem.Invoke();
             gameObject.SetActive(false);
         }
-        
-
     }
 }
