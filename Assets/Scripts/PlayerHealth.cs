@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public Image healthImage;
     public GameObject gameOverScreen;
     public bool fishIsAlive = true;
-    // Start is called before the first frame update
+    [SerializeField] private PlayerDeactivator playerDeactivator;
 
 
     private void Awake()
@@ -59,5 +59,6 @@ public class PlayerHealth : MonoBehaviour
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
+        playerDeactivator.DeactivatePlayer();
     }
 }

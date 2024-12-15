@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
     {
         speed = 0;
         defaultScale = transform.localScale;
+        SetInControl(true);
+        SetVisibility(true);
     }
 
     // Update is called once per frame
@@ -70,15 +72,18 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called 50 times a second on a fixed interval
     private void FixedUpdate()
     {
-        float rot = transform.eulerAngles.z;
-        /*
-        foreach (var renderer in GetComponentsInChildren<SpriteRenderer>())
+        if (inControl)
         {
+            float rot = transform.eulerAngles.z;
+            /*
+            foreach (var renderer in GetComponentsInChildren<SpriteRenderer>())
+            {
 
-        }*/
-        _spriteRenderer.flipY = rot > 90 && rot < 270;
-        Move(Time.fixedDeltaTime);
-        Turn(Time.fixedDeltaTime);
+            }*/
+            _spriteRenderer.flipY = rot > 90 && rot < 270;
+            Move(Time.fixedDeltaTime);
+            Turn(Time.fixedDeltaTime);
+        }
     }
 
     private void Move(float deltaT)
@@ -164,6 +169,15 @@ public class PlayerController : MonoBehaviour
     }
     private bool IsDashing() { return dashTimer > 0; }
 
+    public void SetInControl(bool value)
+    {
+        inControl = value;
+    }
+
+    public void SetVisibility(bool value)
+    {
+        _spriteRenderer.enabled = value;
+    }
 
     public void takeDamage()
     {
