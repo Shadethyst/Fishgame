@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     private bool inControl;
 
+    private Vector3 defaultScale;
+
     private void OnEnable()
     {
     }
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         speed = 0;
+        defaultScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -88,6 +91,7 @@ public class PlayerController : MonoBehaviour
             targetSpeed = ms.dashSpeed;
             dashTimer = ms.dashTime;
             dashCooldownTimer = ms.dashCooldown;
+            transform.localScale = new(defaultScale.x * 1.3f, defaultScale.y * 0.8f, 1);
         }
         else if (IsDashing())
         {
@@ -98,6 +102,7 @@ public class PlayerController : MonoBehaviour
                 // Stop dash
                 targetSpeed = 0;
                 dashTimer = 0;
+                transform.localScale = defaultScale;
             }
         }
         else if (moveU.IsPressed()) // Normal forward
