@@ -39,8 +39,6 @@ public class SoundDetector : MonoBehaviour
         {
             soundstate = SoundState.Idle;
         }
-
-        Debug.Log(soundstate.ToString());
     }
 
     bool CheckSurroundings(LayerMask layerName)

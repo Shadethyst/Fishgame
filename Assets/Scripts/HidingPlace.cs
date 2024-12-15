@@ -12,7 +12,7 @@ public class HidingPlace : MonoBehaviour
     public UnityEvent leaveHiding;
     void Start()
     {
-        player = GameObject.FindAnyObjectByType<PlayerController>();
+        player = FindAnyObjectByType<PlayerController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

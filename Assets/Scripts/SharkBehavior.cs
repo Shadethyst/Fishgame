@@ -22,45 +22,45 @@ public class SharkBehavior : MonoBehaviour
     private Rigidbody2D Srigidbody;
 
     private SFXManager sfxManager;
-void OnTriggerEnter2D(Collider2D collision)
-{
-    if (collision.CompareTag("Player"))
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
-        if (playerHealth != null)
+        if (collision.CompareTag("Player"))
         {
-            playerHealth.TakeDamage(1); // Reduce health by 1
-            Debug.Log("Player damaged by shark!");
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(1); // Reduce health by 1
+                Debug.Log("Player damaged by shark!");
+            }
         }
     }
-}
 
     private void Awake()
     {
         Srigidbody = GetComponent<Rigidbody2D>();
     }
     private void Start()
-{
-    if (pointA == null || pointB == null)
     {
+        if (pointA == null || pointB == null)
+        {
+            Debug.LogError("Patrol points are not assigned!");
+            enabled = false; // Disable the script
+            return;
+        }
 
-        Debug.LogError("Patrol points are not assigned!");
-        enabled = false; // Disable the script
-        return;
+        currentTarget = pointB.position;
+
+        // Find player
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+
+        }
+        else
+        {
+            Debug.LogError("Player object not found!");
+        }
     }
-
-    currentTarget = pointB.position;
-
-    // Find player
-    player = GameObject.FindGameObjectWithTag("Player");
-    if (player != null){
-
-    }
-    else
-    {
-        Debug.LogError("Player object not found!");
-    }
-}
 
 
     private void Update()
@@ -96,16 +96,20 @@ void OnTriggerEnter2D(Collider2D collision)
 
     public void StartChasing()
     {
-        if(isChasing == false)
+        if (isChasing == false)
         {
+            Debug.Log("Player detected, starting chasing!");
             chaseStart = transform.position;
         }
         isChasing = true;
-
     }
 
     public void StopChasing()
     {
+        if (isChasing)
+        {
+            Debug.Log("Player got away, stopping chasing!");
+        }
         isChasing = false;
     }
 
@@ -116,15 +120,15 @@ void OnTriggerEnter2D(Collider2D collision)
          * Debug.Log(patDirection);
         Debug.Log((Vector2)Srigidbody.position);
         Debug.Log((Vector2)Srigidbody.position + patDirection * patrolSpeed * Time.fixedDeltaTime);*/
-        Srigidbody.MovePosition((Vector2)transform.position+patDirection*patrolSpeed*Time.fixedDeltaTime);
+        Srigidbody.MovePosition((Vector2)transform.position + patDirection * patrolSpeed * Time.fixedDeltaTime);
         //transform.position = Vector3.MoveTowards(transform.position, currentTarget, patrolSpeed * Time.deltaTime);
 
         // Switch patrol target
         if (Vector2.Distance(transform.position, currentTarget) < 0.5f)
         {
             currentTarget = currentTarget == pointA.position ? pointB.position : pointA.position;
-            gameObject.GetComponent<SpriteRenderer>().flipX = !gameObject.GetComponent<SpriteRenderer>().flipX;
         }
+        gameObject.GetComponent<SpriteRenderer>().flipX = patDirection.x > 0;
     }
 
     private void ChasePlayer()
@@ -136,9 +140,11 @@ void OnTriggerEnter2D(Collider2D collision)
         if (player != null)
         {
             Vector2 targetDirection = (player.transform.position - transform.position).normalized;
-            Debug.Log(targetDirection);
-            Srigidbody.MovePosition((Vector2)transform.position+(Vector2)targetDirection*chaseSpeed* Time.fixedDeltaTime);
+
+            Srigidbody.MovePosition((Vector2)transform.position + (Vector2)targetDirection * chaseSpeed * Time.fixedDeltaTime);
             //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
+
+            gameObject.GetComponent<SpriteRenderer>().flipX = targetDirection.x > 0;
         }
     }
 
@@ -146,5 +152,9 @@ void OnTriggerEnter2D(Collider2D collision)
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(pointA.position, 1);
+        Gizmos.DrawWireSphere(pointB.position, 1);
     }
 }
